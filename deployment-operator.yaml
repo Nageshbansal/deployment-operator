@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-operator
+  
+  template:
+    metadata:
+      labels:
+        app: deployment-operator
+    
+    spec:
+      containers:
+      - name: deployment-operator
+        image: node2534534/deplyoment-operator:latest

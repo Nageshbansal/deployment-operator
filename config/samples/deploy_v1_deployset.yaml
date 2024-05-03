@@ -1,0 +1,17 @@
+apiVersion: deploy.nagesh-node.me/v1
+kind: DeploySet
+metadata:
+  labels:
+    app.kubernetes.io/name: deployset
+    app.kubernetes.io/instance: deployset-sample
+    app.kubernetes.io/part-of: deployment-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: deployment-operator
+  name: deployset-sample
+spec:
+    container:
+      image: crccheck/hello-world
+      port: 8000
+    replica:
+      count: 3
+      version: v1
